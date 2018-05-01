@@ -1,0 +1,1187 @@
+[{
+    "name": "JPetStore",
+    "description": "",
+    "enforceCompleteSnapshots": false,
+    "propSheet": {"properties": []},
+    "templatePropSheet": {
+        "name": "template",
+        "properties": []
+    },
+    "components": [
+        {
+            "name": "JPetStore-APP",
+            "description": "",
+            "created": 1524423913595,
+            "componentType": "STANDARD",
+            "ignoreQualifiers": 0,
+            "importAutomatically": false,
+            "useVfs": true,
+            "active": true,
+            "deleted": false,
+            "defaultVersionType": "FULL",
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "sourceConfigPluginName": "File System (Versioned)",
+            "envPropDefs": [],
+            "resPropDefs": [],
+            "versionPropDefs": [],
+            "propSheetGroup": {"propSheets": [
+                {
+                    "name": "FileSystemVersionedComponentProperties",
+                    "properties": [
+                        {
+                            "name": "basePath",
+                            "value": "\/mnt\/hostFS\/shared\/app",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "excludes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "extensions",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "includes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "saveFileExecuteBits",
+                            "value": "false",
+                            "description": "",
+                            "secure": false
+                        }
+                    ]
+                },
+                {
+                    "name": "template",
+                    "properties": []
+                },
+                {
+                    "name": "custom",
+                    "properties": []
+                }
+            ]},
+            "processes": [{
+                "name": "Deploy application",
+                "description": "",
+                "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+                "takesVersion": true,
+                "inventoryActionType": "ADD",
+                "status": "Active",
+                "configActionType": "ADD",
+                "active": true,
+                "path": "components\/162eebef-083f-33e4-2b48-2eb7fe8b764e\/processes\/162eed1d-bff3-0828-51bf-794ee3bd1639",
+                "deleted": false,
+                "propDefs": [],
+                "rootActivity": {
+                    "edges": [
+                        {
+                            "to": "e44c08fb3e6d5a0316ecacea103590",
+                            "from": "Deploy Application",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Update property file",
+                            "from": "Expand WAR",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Expand WAR",
+                            "from": "Download Artifacts",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Update WAR",
+                            "from": "Update property file",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Download Artifacts",
+                            "from": "Clean working directory",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Deploy Application",
+                            "from": "Undeploy Application",
+                            "type": "ALWAYS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Clean working directory",
+                            "type": "ALWAYS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Undeploy Application",
+                            "from": "Update WAR",
+                            "type": "ALWAYS",
+                            "value": ""
+                        }
+                    ],
+                    "offsets": [
+                        {
+                            "name": "Update property file",
+                            "x": -205,
+                            "y": 630,
+                            "h": 110,
+                            "w": 560
+                        },
+                        {
+                            "name": "e44c08fb3e6d5a0316ecacea103590",
+                            "x": -5,
+                            "y": 1270,
+                            "h": 100,
+                            "w": 160
+                        },
+                        {
+                            "name": "Update WAR",
+                            "x": -120,
+                            "y": 790,
+                            "h": 110,
+                            "w": 390
+                        },
+                        {
+                            "name": "Undeploy Application",
+                            "x": -150,
+                            "y": 950,
+                            "h": 110,
+                            "w": 450
+                        },
+                        {
+                            "name": "Start Tomcat",
+                            "x": -205,
+                            "y": 1380,
+                            "h": 110,
+                            "w": 340
+                        },
+                        {
+                            "name": "Expand WAR",
+                            "x": -60,
+                            "y": 470,
+                            "h": 110,
+                            "w": 270
+                        },
+                        {
+                            "name": "Download Artifacts",
+                            "x": -145,
+                            "y": 310,
+                            "h": 110,
+                            "w": 440
+                        },
+                        {
+                            "name": "Deploy Application",
+                            "x": -135,
+                            "y": 1110,
+                            "h": 110,
+                            "w": 420
+                        },
+                        {
+                            "name": "Clean working directory",
+                            "x": -205,
+                            "y": 150,
+                            "h": 110,
+                            "w": 560
+                        }
+                    ],
+                    "layoutMode": "auto",
+                    "type": "graph",
+                    "name": "03fff1f5-0925-4455-ac2f-8e04b0ba9c17",
+                    "children": [
+                        {
+                            "type": "finish",
+                            "name": "e44c08fb3e6d5a0316ecacea103590",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Delete Files and Directories",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "baseDir": ".",
+                                "includes": "**\/*",
+                                "excludes": "",
+                                "followSymlinks": "false",
+                                "caseSensitive": "true"
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Clean working directory",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 29,
+                            "commandName": "Download Artifacts",
+                            "pluginName": "IBM UrbanCode Deploy Versioned File Storage",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "directoryOffset": ".",
+                                "artifactSetBaseDir": "",
+                                "fileIncludePatterns": "**\/*",
+                                "fileExcludePatterns": "",
+                                "syncMode": "true",
+                                "fullVerification": "true",
+                                "setFileExecuteBits": "false",
+                                "verifyFileIntegrity": "false",
+                                "versionId": "${p:version.id}",
+                                "serverUrl": "${p:server.url}",
+                                "compId": "${p:component.id}",
+                                "resId": "${p:resource.id}",
+                                "charset": "",
+                                "label": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Download Artifacts",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Unzip",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "dir": ".\/JPetStore_expanded",
+                                "zip": "jpetstore.war",
+                                "includes": "**\/*",
+                                "excludes": "",
+                                "overwrite": "false",
+                                "customEncoding": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Expand WAR",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Update Java Properties File",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "customEncoding": "",
+                                "useSystemEncoding": "false",
+                                "dir": ".\/JPetStore_expanded\/WEB-INF\/classes\/properties",
+                                "includes": "database.properties",
+                                "excludes": "",
+                                "updateProps": "url=${p:environment\/db.url}",
+                                "additionalProps": "",
+                                "additionalPropsPrefix": "",
+                                "deleteProps": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Update property file",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Create .zip File",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "zipName": "jpetstore.war",
+                                "baseDir": ".\/JPetStore_expanded",
+                                "includes": "**\/*",
+                                "excludes": "",
+                                "update": "true",
+                                "followSymlinks": "false",
+                                "caseSensitive": "true",
+                                "customEncoding": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Update WAR",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 7,
+                            "commandName": "Start Tomcat",
+                            "pluginName": "Tomcat",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "launcherLocation": "${p:environment\/tomcat.start}",
+                                "options": "",
+                                "timeout": "60",
+                                "port": "8080",
+                                "hostname": "",
+                                "catalinaBase": "",
+                                "catalinaHome": "",
+                                "javaHome": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Start Tomcat",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 7,
+                            "commandName": "Undeploy Application",
+                            "pluginName": "Tomcat",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "tomcatManagerUrl": "${p:environment\/tomcat.manager.url}",
+                                "tomcatUsername": "tomcat",
+                                "tomcatPassword": "crypt_v1{AES\/CBC\/PKCS5Padding|aes128keyvqm6|VcUd\/QnUFX8EFSau9BbRpg==|EPXKOB9r7nMnEwFYnm1swQ==}",
+                                "tomcatContext": "\/${p:environment\/tomcat.contextroot}"
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Undeploy Application",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 7,
+                            "commandName": "Deploy Application",
+                            "pluginName": "Tomcat",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "tomcatManagerUrl": "${p:environment\/tomcat.manager.url}",
+                                "tomcatUsername": "tomcat",
+                                "tomcatPassword": "crypt_v1{AES\/CBC\/PKCS5Padding|aes128keyvqm6|VZ5oESKQaExEugWzPQZysQ==|9tM0il+0N6Gp+t02hUO3+w==}",
+                                "tomcatContext": "\/${p:environment\/tomcat.contextroot}",
+                                "warFile": ".\/jpetstore.war",
+                                "configFile": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Deploy Application",
+                            "children": []
+                        }
+                    ]
+                }
+            }],
+            "configTemplates": [],
+            "genericProcesses": [],
+            "teamMappings": [],
+            "tags": []
+        },
+        {
+            "name": "JPetStore-DB",
+            "description": "",
+            "created": 1524424053457,
+            "componentType": "STANDARD",
+            "ignoreQualifiers": 0,
+            "importAutomatically": false,
+            "useVfs": true,
+            "active": true,
+            "deleted": false,
+            "defaultVersionType": "FULL",
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "sourceConfigPluginName": "File System (Versioned)",
+            "envPropDefs": [],
+            "resPropDefs": [],
+            "versionPropDefs": [],
+            "propSheetGroup": {"propSheets": [
+                {
+                    "name": "template",
+                    "properties": []
+                },
+                {
+                    "name": "FileSystemVersionedComponentProperties",
+                    "properties": [
+                        {
+                            "name": "basePath",
+                            "value": "\/mnt\/hostFS\/shared\/db",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "excludes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "extensions",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "includes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "saveFileExecuteBits",
+                            "value": "false",
+                            "description": "",
+                            "secure": false
+                        }
+                    ]
+                },
+                {
+                    "name": "custom",
+                    "properties": []
+                }
+            ]},
+            "processes": [{
+                "name": "Deploy database",
+                "description": "",
+                "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+                "takesVersion": true,
+                "inventoryActionType": "ADD",
+                "status": "Active",
+                "configActionType": "ADD",
+                "active": true,
+                "path": "components\/162eec11-2dbf-4f15-3cef-bffc09949d90\/processes\/162eef4f-982b-d958-18ef-6b20f8c7d2e4",
+                "deleted": false,
+                "propDefs": [],
+                "rootActivity": {
+                    "edges": [
+                        {
+                            "to": "Upgrade DB",
+                            "from": "Download Artifacts",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "342e1f485f04eb1041785ab026026f",
+                            "from": "Upgrade DB",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Download Artifacts",
+                            "type": "ALWAYS",
+                            "value": ""
+                        }
+                    ],
+                    "offsets": [
+                        {
+                            "name": "Upgrade DB",
+                            "x": -50,
+                            "y": 350,
+                            "h": 70,
+                            "w": 210
+                        },
+                        {
+                            "name": "Download Artifacts",
+                            "x": -75,
+                            "y": 180,
+                            "h": 70,
+                            "w": 260
+                        },
+                        {
+                            "name": "342e1f485f04eb1041785ab026026f",
+                            "x": -5,
+                            "y": 520,
+                            "h": 80,
+                            "w": 120
+                        }
+                    ],
+                    "layoutMode": "auto",
+                    "type": "graph",
+                    "name": "f470a461-4562-491b-a20b-fa1d54a0c10b",
+                    "children": [
+                        {
+                            "type": "finish",
+                            "name": "342e1f485f04eb1041785ab026026f",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 3,
+                            "commandName": "Upgrade DB",
+                            "pluginName": "DBUpgrader",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "driver": "com.mysql.jdbc.Driver",
+                                "dbJar": "lib\/mysql-connector-java-5.1.20-bin.jar",
+                                "dbUrl": "${p:environment\/db.url}",
+                                "dbUser": "jpetstore",
+                                "dbPass": "crypt_v1{AES\/CBC\/PKCS5Padding|aes128keyvqm6|+pYlmnY5ubilUrUTmDu2GA==|7KfU2N2oW\/34eoyoFhntDA==}",
+                                "sqlFilePath": ".",
+                                "sqlFileInclude": "*.xml",
+                                "currentVersionSql": "SELECT VER FROM DB_VERSION WHERE RELEASE_NAME = ?",
+                                "deleteVersionSql": "DELETE FROM DB_VERSION WHERE RELEASE_NAME = ?",
+                                "updateVersionSql": "INSERT INTO DB_VERSION (RELEASE_NAME,VER) VALUES(?,?)"
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Upgrade DB",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 29,
+                            "commandName": "Download Artifacts",
+                            "pluginName": "IBM UrbanCode Deploy Versioned File Storage",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "directoryOffset": ".",
+                                "artifactSetBaseDir": "",
+                                "fileIncludePatterns": "**\/*",
+                                "fileExcludePatterns": "",
+                                "syncMode": "true",
+                                "fullVerification": "true",
+                                "setFileExecuteBits": "false",
+                                "verifyFileIntegrity": "false",
+                                "versionId": "${p:version.id}",
+                                "serverUrl": "${p:server.url}",
+                                "compId": "${p:component.id}",
+                                "resId": "${p:resource.id}",
+                                "charset": "",
+                                "label": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Download Artifacts",
+                            "children": []
+                        }
+                    ]
+                }
+            }],
+            "configTemplates": [],
+            "genericProcesses": [],
+            "teamMappings": [],
+            "tags": []
+        },
+        {
+            "name": "JPetStore-WEB",
+            "description": "",
+            "created": 1524424178017,
+            "componentType": "STANDARD",
+            "ignoreQualifiers": 0,
+            "importAutomatically": false,
+            "useVfs": true,
+            "active": true,
+            "deleted": false,
+            "defaultVersionType": "FULL",
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "sourceConfigPluginName": "File System (Versioned)",
+            "envPropDefs": [],
+            "resPropDefs": [],
+            "versionPropDefs": [],
+            "propSheetGroup": {"propSheets": [
+                {
+                    "name": "custom",
+                    "properties": []
+                },
+                {
+                    "name": "FileSystemVersionedComponentProperties",
+                    "properties": [
+                        {
+                            "name": "basePath",
+                            "value": "\/mnt\/hostFS\/shared\/web",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "excludes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "extensions",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "includes",
+                            "description": "",
+                            "secure": false
+                        },
+                        {
+                            "name": "saveFileExecuteBits",
+                            "value": "false",
+                            "description": "",
+                            "secure": false
+                        }
+                    ]
+                },
+                {
+                    "name": "template",
+                    "properties": []
+                }
+            ]},
+            "processes": [{
+                "name": "Deploy web",
+                "description": "",
+                "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+                "takesVersion": true,
+                "inventoryActionType": "ADD",
+                "status": "Active",
+                "configActionType": "ADD",
+                "active": true,
+                "path": "components\/162eec2f-974d-7d25-4dff-f03a29cfd0d5\/processes\/162eec5f-94d7-d650-307a-eebad724b3a6",
+                "deleted": false,
+                "propDefs": [],
+                "rootActivity": {
+                    "edges": [
+                        {
+                            "to": "63588d101518ea17a546244fb93b28",
+                            "from": "Deploy new content.",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Download Artifacts",
+                            "from": "Delete Files and Directories",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Delete Files and Directories",
+                            "type": "ALWAYS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Deploy new content.",
+                            "from": "Remove old content",
+                            "type": "SUCCESS",
+                            "value": ""
+                        },
+                        {
+                            "to": "Remove old content",
+                            "from": "Download Artifacts",
+                            "type": "SUCCESS",
+                            "value": ""
+                        }
+                    ],
+                    "offsets": [
+                        {
+                            "name": "Download Artifacts",
+                            "x": -75,
+                            "y": 250,
+                            "h": 70,
+                            "w": 260
+                        },
+                        {
+                            "name": "63588d101518ea17a546244fb93b28",
+                            "x": -5,
+                            "y": 610,
+                            "h": 80,
+                            "w": 120
+                        },
+                        {
+                            "name": "Delete Files and Directories",
+                            "x": -100,
+                            "y": 130,
+                            "h": 70,
+                            "w": 310
+                        },
+                        {
+                            "name": "Remove old content",
+                            "x": -100,
+                            "y": 370,
+                            "h": 70,
+                            "w": 310
+                        },
+                        {
+                            "name": "Deploy new content.",
+                            "x": -65,
+                            "y": 490,
+                            "h": 70,
+                            "w": 240
+                        }
+                    ],
+                    "layoutMode": "manual",
+                    "type": "graph",
+                    "name": "f7ecfba2-f745-4b55-a167-d15e5b28a17f",
+                    "children": [
+                        {
+                            "type": "finish",
+                            "name": "63588d101518ea17a546244fb93b28",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Delete Files and Directories",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "baseDir": ".",
+                                "includes": "**\/*",
+                                "excludes": "",
+                                "followSymlinks": "false",
+                                "caseSensitive": "true"
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Delete Files and Directories",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 29,
+                            "commandName": "Download Artifacts",
+                            "pluginName": "IBM UrbanCode Deploy Versioned File Storage",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "directoryOffset": ".",
+                                "artifactSetBaseDir": "",
+                                "fileIncludePatterns": "**\/*",
+                                "fileExcludePatterns": "",
+                                "syncMode": "true",
+                                "fullVerification": "true",
+                                "setFileExecuteBits": "false",
+                                "verifyFileIntegrity": "false",
+                                "versionId": "${p:version.id}",
+                                "serverUrl": "${p:server.url}",
+                                "compId": "${p:component.id}",
+                                "resId": "${p:resource.id}",
+                                "charset": "",
+                                "label": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Download Artifacts",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "workingDir": "${p:environment\/tomcat.home}",
+                            "pluginVersion": 63,
+                            "commandName": "Delete Files and Directories",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "baseDir": "webapps\/${p:environment\/tomcat.contextroot}",
+                                "includes": "images",
+                                "excludes": "",
+                                "followSymlinks": "false",
+                                "caseSensitive": "true"
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Remove old content",
+                            "children": []
+                        },
+                        {
+                            "allowFailure": false,
+                            "useImpersonation": false,
+                            "showHidden": false,
+                            "impersonationUseSudo": false,
+                            "pluginVersion": 63,
+                            "commandName": "Move Directory",
+                            "pluginName": "File Utils",
+                            "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                            "properties": {
+                                "sourceDir": ".",
+                                "destDir": "${p:environment\/tomcat.home}\/webapps\/${p:environment\/tomcat.contextroot}\/",
+                                "includes": "images\/*",
+                                "excludes": "",
+                                "mapperRules": ""
+                            },
+                            "cachedAuthTokenRestriction": {
+                                "name": "System Default",
+                                "description": "Used by default for any plugin steps without a specified token restriction",
+                                "restrictions": [{
+                                    "verb": "ALL",
+                                    "url": "\/*"
+                                }]
+                            },
+                            "type": "plugin",
+                            "name": "Deploy new content.",
+                            "children": []
+                        }
+                    ]
+                }
+            }],
+            "configTemplates": [],
+            "genericProcesses": [],
+            "teamMappings": [],
+            "tags": []
+        }
+    ],
+    "environments": [{
+        "name": "Tutorial environment 1",
+        "description": "",
+        "color": "#00B2EF",
+        "requireApprovals": false,
+        "noSelfApprovals": false,
+        "exemptProcesses": [],
+        "lockSnapshots": false,
+        "requireSnapshots": false,
+        "cleanupDaysToKeep": 0,
+        "cleanupCountToKeep": 0,
+        "enableProcessHistoryCleanup": true,
+        "useSystemDefaultDays": true,
+        "historyCleanupDaysToKeep": 365,
+        "order": 0,
+        "active": true,
+        "propSheet": {"properties": [
+            {
+                "name": "db.url",
+                "value": "jdbc:mysql:\/\/db:3306\/jpetstore",
+                "description": "",
+                "secure": false
+            },
+            {
+                "name": "tomcat.contextroot",
+                "value": "JPetStoreDev",
+                "description": "",
+                "secure": false
+            },
+            {
+                "name": "tomcat.home",
+                "value": "\/usr\/local\/tomcat",
+                "description": "",
+                "secure": false
+            },
+            {
+                "name": "tomcat.manager.url",
+                "value": "http:\/\/app:8080\/manager\/text\/",
+                "description": "",
+                "secure": false
+            },
+            {
+                "name": "tomcat.start",
+                "value": "\/usr\/local\/tomcat\/bin\/startup.sh",
+                "description": "",
+                "secure": false
+            }
+        ]},
+        "templatePropSheet": {
+            "name": "template",
+            "properties": []
+        },
+        "baseResources": [{
+            "path": "\/JPetStore agents",
+            "id": "162ef134-1dbf-91ca-66f3-8045f849766c"
+        }],
+        "componentPropSheets": [
+            {
+                "properties": [],
+                "componentName": "JPetStore-APP"
+            },
+            {
+                "properties": [],
+                "componentName": "JPetStore-DB"
+            },
+            {
+                "properties": [],
+                "componentName": "JPetStore-WEB"
+            }
+        ],
+        "versionConditions": [],
+        "teamMappings": []
+    }],
+    "statuses": [],
+    "processes": [{
+        "name": "Deploy JPetStore",
+        "description": "",
+        "inventoryManagementType": "AUTOMATIC",
+        "offlineAgentHandling": "PRE_EXECUTION_CHECK",
+        "rootActivity": {
+            "edges": [
+                {
+                    "to": "e707c67c8525605d818df40428393c",
+                    "from": "c02998ca2b2c575335d9d76d153ab9",
+                    "type": "SUCCESS",
+                    "value": ""
+                },
+                {
+                    "to": "2d9a5e6d7db0f8978c559c41edc571",
+                    "from": "4a4c81d543aa22ad2e56b29d374632",
+                    "type": "SUCCESS",
+                    "value": ""
+                },
+                {
+                    "to": "2d9a5e6d7db0f8978c559c41edc571",
+                    "from": "e707c67c8525605d818df40428393c",
+                    "type": "SUCCESS",
+                    "value": ""
+                },
+                {
+                    "to": "c02998ca2b2c575335d9d76d153ab9",
+                    "type": "ALWAYS",
+                    "value": ""
+                },
+                {
+                    "to": "4a4c81d543aa22ad2e56b29d374632",
+                    "from": "c02998ca2b2c575335d9d76d153ab9",
+                    "type": "SUCCESS",
+                    "value": ""
+                }
+            ],
+            "offsets": [
+                {
+                    "name": "c02998ca2b2c575335d9d76d153ab9",
+                    "x": -90,
+                    "y": 130,
+                    "h": 80,
+                    "w": 290
+                },
+                {
+                    "name": "2d9a5e6d7db0f8978c559c41edc571",
+                    "x": -4.166666666666686,
+                    "y": 390,
+                    "h": 80,
+                    "w": 120
+                },
+                {
+                    "name": "4a4c81d543aa22ad2e56b29d374632",
+                    "x": 78.33333333333331,
+                    "y": 260,
+                    "h": 80,
+                    "w": 250
+                },
+                {
+                    "name": "e707c67c8525605d818df40428393c",
+                    "x": -231.66666666666669,
+                    "y": 260,
+                    "h": 80,
+                    "w": 280
+                }
+            ],
+            "layoutMode": "auto",
+            "type": "graph",
+            "name": "c77b9c48-ffe6-4ad6-8aac-6d7f5f865c1a",
+            "children": [
+                {
+                    "type": "finish",
+                    "name": "2d9a5e6d7db0f8978c559c41edc571",
+                    "children": []
+                },
+                {
+                    "componentName": "JPetStore-APP",
+                    "properties": [
+                        {
+                            "name": "maxIteration",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "failFast",
+                            "value": "false"
+                        }
+                    ],
+                    "type": "componentEnvironmentIterator",
+                    "name": "c02998ca2b2c575335d9d76d153ab9",
+                    "children": [{
+                        "componentName": "JPetStore-APP",
+                        "status": "Active",
+                        "type": "inventoryVersionDiff",
+                        "name": "ba93b646-feda-41a9-9eda-a08632b6941b",
+                        "children": [{
+                            "componentProcessName": "Deploy application",
+                            "componentName": "JPetStore-APP",
+                            "allowFailure": false,
+                            "properties": {},
+                            "type": "componentProcess",
+                            "name": "Deploy application component",
+                            "children": []
+                        }]
+                    }]
+                },
+                {
+                    "componentName": "JPetStore-WEB",
+                    "properties": [
+                        {
+                            "name": "maxIteration",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "failFast",
+                            "value": "false"
+                        }
+                    ],
+                    "type": "componentEnvironmentIterator",
+                    "name": "4a4c81d543aa22ad2e56b29d374632",
+                    "children": [{
+                        "componentName": "JPetStore-WEB",
+                        "status": "Active",
+                        "type": "inventoryVersionDiff",
+                        "name": "f7f98d68-bfde-4616-a4df-aec4ce81f7c0",
+                        "children": [{
+                            "componentProcessName": "Deploy web",
+                            "componentName": "JPetStore-WEB",
+                            "allowFailure": false,
+                            "properties": {},
+                            "type": "componentProcess",
+                            "name": "Deploy web component",
+                            "children": []
+                        }]
+                    }]
+                },
+                {
+                    "componentName": "JPetStore-DB",
+                    "properties": [
+                        {
+                            "name": "maxIteration",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "failFast",
+                            "value": "false"
+                        }
+                    ],
+                    "type": "componentEnvironmentIterator",
+                    "name": "e707c67c8525605d818df40428393c",
+                    "children": [{
+                        "componentName": "JPetStore-DB",
+                        "status": "Active",
+                        "type": "inventoryVersionDiff",
+                        "name": "3b6f5ccb-ac61-4cdf-8fd3-3b3244d76b2d",
+                        "children": [{
+                            "componentProcessName": "Deploy database",
+                            "componentName": "JPetStore-DB",
+                            "allowFailure": false,
+                            "properties": {},
+                            "type": "componentProcess",
+                            "name": "Deploy database component",
+                            "children": []
+                        }]
+                    }]
+                }
+            ]
+        },
+        "propDefs": [],
+        "versionPresets": []
+    }],
+    "genericProcesses": [],
+    "teamMappings": [],
+    "tags": []
+}]
