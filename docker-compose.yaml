@@ -27,7 +27,7 @@ services:
       - db
       - app
     extra_hosts:
-      - "ucd-server:172.17.0.2"
+      - "ucd-server:"
     volumes:
       - ./vol/ucase-db-client:/mnt/hostFS
     network_mode: bridge
